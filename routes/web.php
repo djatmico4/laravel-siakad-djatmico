@@ -20,5 +20,9 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('home', function () {
         return view('pages.app.dashboard-siakad', ['type_menu' => '']);
-    });
+    })->name('home');
 });
+
+Route::get('/forgot-password', function () {
+    return view('pages.auth-forgot-password');
+})->name('forgot-password');
